@@ -16,6 +16,19 @@ const getLeaderboard = async (req, res) => {
         }
       },
       {
+        $lookup: {
+          from: 'teams',
+          localField: 'teamId',
+          foreignField: 'teamId',
+          as: 'team'
+        }
+      },
+      {
+        $match: {
+          team: { $ne: [] }
+        }
+      },
+      {
         $addFields: {
           // Calculate totalTime in seconds
           totalTime: {
