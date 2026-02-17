@@ -10,7 +10,7 @@ const Leaderboard = () => {
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await api.get('/leaderboard');
+      const res = await api.get('/api/leaderboard');
       setData(res.data.leaderboard || []);
       setLastUpdated(new Date());
     } catch (err) {
