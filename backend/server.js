@@ -34,8 +34,8 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Internal Server Error', error: err.message });
 });
+const PORT = process.env.PORT || 5001;
 
-const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`🦑 Squid Game Server running on port ${PORT}`);
 });
