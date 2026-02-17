@@ -218,7 +218,7 @@ const seedDatabase = async () => {
       {
         type: 'square',
         question: 'Study the Cows & Bulls clues in the image and guess the secret 4-digit number.',
-        imageUrl: 'https://res.cloudinary.com/de8hc8le4/image/upload/v1771335191/Screenshot_2026-02-17_at_19.02.21_cwqw0y.png ',
+        imageUrl: 'https://res.cloudinary.com/de8hc8le4/image/upload/v1771335191/Screenshot_2026-02-17_at_19.02.21_cwqw0y.png',
         correctAnswer: '9876'
       },
 

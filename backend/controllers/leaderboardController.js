@@ -7,12 +7,13 @@ const Progress = require('../models/Progress');
  */
 const getLeaderboard = async (req, res) => {
   try {
-    // Aggregation pipeline: only teams that finished (umbrella unlocked + endTime exists)
+    // Aggregation pipeline: only teams that finished all 5 rounds (umbrella unlocked + endTime exists + completedRounds == 5)
     const leaderboard = await Progress.aggregate([
       {
         $match: {
           'locks.umbrella': 'unlocked',
-          endTime: { $ne: null }
+          endTime: { $ne: null },
+          completedRounds: 5
         }
       },
       {
