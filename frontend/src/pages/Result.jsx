@@ -15,7 +15,7 @@ const Result = () => {
 
   const fetchResult = async () => {
     try {
-      const res = await api.get('/game/status');
+      const res = await api.get('/api/game/status');
       setResult(res.data);
     } catch (err) {
       console.error(err);

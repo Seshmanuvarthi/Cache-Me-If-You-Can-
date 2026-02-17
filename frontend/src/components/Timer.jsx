@@ -26,7 +26,7 @@ const Timer = () => {
       if (rem === 0) {
         // Time's up, complete the game
         try {
-          await api.post('/game/complete');
+          await api.post('/api/game/complete');
           await refreshProgress();
         } catch (error) {
           console.error('Error completing game:', error);

@@ -21,7 +21,7 @@ const Circle = () => {
   const fetchQuestion = async () => {
     setLoading(true);
     try {
-      const res = await api.get('/game/circle');
+      const res = await api.get('/api/game/circle');
       if (res.data.status === 'unlocked') {
         setStatus('unlocked');
       } else {
@@ -39,7 +39,7 @@ const Circle = () => {
     setSubmitting(true);
     setMessage('');
     try {
-      const res = await api.post('/game/circle/submit', { answer });
+      const res = await api.post('/api/game/circle/submit', { answer });
       await refreshProgress();
       if (res.data.correct) {
         setStatus('unlocked');

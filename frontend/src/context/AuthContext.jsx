@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchProgress = async () => {
     try {
-      const res = await api.get('/game/status');
+      const res = await api.get('/api/game/status');
       setProgress(res.data);
     } catch (err) {
       console.error('Progress fetch failed');
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (teamId, password) => {
-    const res = await api.post('/auth/login', { teamId, password });
+    const res = await api.post('/api/auth/login', { teamId, password });
     const { token, teamId: tid, progress: prog } = res.data;
     localStorage.setItem('squidToken', token);
     localStorage.setItem('squidTeam', JSON.stringify({ teamId: tid }));

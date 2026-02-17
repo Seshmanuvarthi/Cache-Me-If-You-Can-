@@ -18,7 +18,7 @@ const Triangle = () => {
   const fetchQuestion = async (lang) => {
     setLoading(true);
     try {
-      const res = await api.get(`/game/triangle?language=${lang}`);
+      const res = await api.get(`/api/game/triangle?language=${lang}`);
       if (res.data.status === 'unlocked') {
         setStatus('unlocked');
       } else {
@@ -42,7 +42,7 @@ const Triangle = () => {
     setSubmitting(true);
     setMessage('');
     try {
-      const res = await api.post('/game/triangle/submit', { answer });
+      const res = await api.post('/api/game/triangle/submit', { answer });
       await refreshProgress();
       if (res.data.correct) {
         setStatus('unlocked');

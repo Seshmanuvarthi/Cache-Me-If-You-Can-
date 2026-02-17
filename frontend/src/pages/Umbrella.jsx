@@ -21,7 +21,7 @@ const Umbrella = () => {
   const fetchQuestions = async () => {
     setLoading(true);
     try {
-      const res = await api.get('/game/umbrella');
+      const res = await api.get('/api/game/umbrella');
       if (res.data.status === 'unlocked') {
         setStatus('unlocked');
       } else {
@@ -47,7 +47,7 @@ const Umbrella = () => {
     setSubmitting(true);
     setMessage('');
     try {
-      const res = await api.post('/game/umbrella/submit', { answers });
+      const res = await api.post('/api/game/umbrella/submit', { answers });
       await refreshProgress();
       if (res.data.correct) {
         setStatus('unlocked');

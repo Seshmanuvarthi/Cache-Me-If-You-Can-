@@ -18,7 +18,7 @@ const RedGreen = () => {
 
   const fetchStatus = async () => {
     try {
-      const res = await api.get('/game/redgreen');
+      const res = await api.get('/api/game/redgreen');
       setStatus(res.data.status || 'locked');
     } catch (err) {
       if (err.response?.status === 403) setStatus('permanently_locked');
@@ -30,7 +30,7 @@ const RedGreen = () => {
     setSubmitting(true);
     setMessage('');
     try {
-      const res = await api.post('/game/redgreen/submit', { answer });
+      const res = await api.post('/api/game/redgreen/submit', { answer });
       await refreshProgress();
       if (res.data.correct) {
         setStatus('unlocked');

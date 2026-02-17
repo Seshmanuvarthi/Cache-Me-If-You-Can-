@@ -21,7 +21,7 @@ const Square = () => {
   const fetchQuestion = async () => {
     setLoading(true);
     try {
-      const res = await api.get('/game/square');
+      const res = await api.get('/api/game/square');
       if (res.data.status === 'unlocked') {
         setStatus('unlocked');
       } else {
@@ -48,7 +48,7 @@ const Square = () => {
     setSubmitting(true);
     setMessage('');
     try {
-      const res = await api.post('/game/square/submit', { answer });
+      const res = await api.post('/api/game/square/submit', { answer });
       await refreshProgress();
       if (res.data.correct) {
         setStatus('unlocked');
