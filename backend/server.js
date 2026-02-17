@@ -14,9 +14,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://YOUR_FRONTEND_RENDER_URL'],
+  origin: "https://cache-me-if-you-can-1-r8bc.onrender.com",
   credentials: true
 }));
+app.options("*", cors());
 app.use(express.json());
 
 // Routes
