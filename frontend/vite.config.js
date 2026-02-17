@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'https://cache-me-if-you-can-a3gi.onrender.com',
         changeOrigin: true
       }
     }
